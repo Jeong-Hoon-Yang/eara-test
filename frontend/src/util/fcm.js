@@ -11,8 +11,8 @@ const config = {
   measurementId: "G-NBKYLTZB14",
 };
 
-const app = initializeApp(config);
-const messaging = getMessaging();
+const firebaseapp = initializeApp(config);
+const messaging = getMessaging(firebaseapp);
 
 getToken(messaging, {
   vapidKey:

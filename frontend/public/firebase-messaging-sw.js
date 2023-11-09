@@ -1,8 +1,8 @@
 //프로젝트 버전 확인
-importScripts("https://www.gstatic.com/firebasejs/9.2.1/firebase-app-compat.js");
-importScripts("https://www.gstatic.com/firebasejs/9.2.1/firebase-messaging-compat.js");
+importScripts("https://www.gstatic.com/firebasejs/9.2.0/firebase-app-compat.js");
+importScripts("https://www.gstatic.com/firebasejs/9.2.0/firebase-messaging-compat.js");
 
-const config = {
+const firebaseConfig = {
   apiKey: "AIzaSyC1jJvue_jUm6uhqnHVcvAPzBTgSGmisKI",
   authDomain: "eara-cf80c.firebaseapp.com",
   projectId: "eara-cf80c",
@@ -13,9 +13,9 @@ const config = {
 };
 
 // Initialize Firebase
-firebase.initializeApp(config);
+const app = firebase.initializeApp(firebaseConfig);
 
-const messaging = firebase.messaging();
+const messaging = firebase.messaging(app);
 
 //백그라운드 서비스워커 설정
 messaging.onBackgroundMessage(messaging, (payload) => {
